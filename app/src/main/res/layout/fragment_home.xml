@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,30 +9,25 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/chooseYourDayLabelTextView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
         android:text="@string/choose_your_day"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="24sp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/useCirclesTextView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/chooseYourDayLabelTextView"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
         android:text="@string/use_circles"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chooseYourDayLabelTextView" />
+        android:textSize="16sp" />
 
     <ImageView
         android:id="@+id/competitionImageView"
@@ -42,11 +37,9 @@
         android:clickable="true"
         android:focusable="true"
         android:longClickable="true"
-        android:src="@drawable/icon_competition_summary"
-        app:layout_constraintBottom_toBottomOf="@id/addImageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/useCirclesTextView" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_competition_summary"/>
 
 
     <ImageView
@@ -57,9 +50,8 @@
         android:clickable="true"
         android:focusable="true"
         android:longClickable="true"
-        android:src="@drawable/icon_competition_summary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/competitionImageView" />
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon_competition_summary" />
 
     <ImageView
         android:id="@+id/restImageView"
@@ -67,11 +59,11 @@
         android:layout_height="100dp"
         android:layout_margin="16dp"
         android:clickable="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:focusable="true"
         android:longClickable="true"
-        android:src="@drawable/icon_competition_summary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/competitionImageView" />
+        android:src="@drawable/icon_competition_summary"/>
 
     <ImageView
         android:id="@+id/addImageView"
@@ -80,11 +72,10 @@
         android:layout_margin="16dp"
         android:clickable="true"
         android:focusable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:longClickable="true"
-        android:src="@drawable/circle_border"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/trainingImageView" />
+        android:src="@drawable/circle_border"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
