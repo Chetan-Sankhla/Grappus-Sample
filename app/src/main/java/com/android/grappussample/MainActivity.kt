@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 Handler().postDelayed(Runnable {
                     skipButton.visibility = View.VISIBLE
                     flipSKip.start()
-                }, 1000)
+                }, 450)
             }
 
         })
