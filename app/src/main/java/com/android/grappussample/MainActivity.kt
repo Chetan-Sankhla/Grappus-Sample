@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.animation.LinearInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -57,14 +58,36 @@ class MainActivity : AppCompatActivity() {
 
             override fun onAnimationEnd(p0: Animation?) {
 
-                createProfileButton.visibility = View.VISIBLE
+                tv_title.visibility = View.VISIBLE
+                tv_subtitle.visibility = View.VISIBLE
+                tv_title.alpha = 0.0f
+                tv_title.animate().apply {
+                    interpolator = LinearInterpolator()
+                    duration = 600
+                    alpha(1f)
+                    startDelay = 0
+                    start()
+                }
 
-                flip.start()
+                tv_subtitle.alpha = 0.0f
+                tv_subtitle.animate().apply {
+                    interpolator = LinearInterpolator()
+                    duration = 600
+                    alpha(1f)
+                    startDelay = 0
+                    start()
+                }
+
+                Handler().postDelayed(Runnable {
+                    createProfileButton.visibility = View.VISIBLE
+
+                    flip.start()
+                }, 700)
 
                 Handler().postDelayed(Runnable {
                     skipButton.visibility = View.VISIBLE
                     flipSKip.start()
-                }, 450)
+                }, 1150)
             }
 
         })

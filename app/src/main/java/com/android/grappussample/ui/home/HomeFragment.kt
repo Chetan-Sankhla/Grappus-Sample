@@ -105,6 +105,8 @@ class HomeFragment : Fragment(), View.OnTouchListener, View.OnDragListener {
                     view.startDrag(data, mShadow, view, 0)
                 }
                 competitionImageView.visibility = View.GONE
+                trainingImageView.alpha = .5f;
+                restImageView.alpha = .5f;
             }
 
             R.id.trainingImageView -> {
@@ -119,6 +121,8 @@ class HomeFragment : Fragment(), View.OnTouchListener, View.OnDragListener {
                 }
 
                 trainingImageView.visibility = View.GONE
+                competitionImageView.alpha = .5f;
+                restImageView.alpha = .5f;
             }
 
             R.id.restImageView -> {
@@ -132,6 +136,8 @@ class HomeFragment : Fragment(), View.OnTouchListener, View.OnDragListener {
                     view.startDrag(data, mShadow, null, 0)
                 }
                 restImageView.visibility = View.GONE
+                competitionImageView.alpha = .5f;
+                trainingImageView.alpha = .5f;
             }
         }
         return false
@@ -205,6 +211,9 @@ class HomeFragment : Fragment(), View.OnTouchListener, View.OnDragListener {
                 competitionImageView.visibility = View.VISIBLE
                 trainingImageView.visibility = View.VISIBLE
                 restImageView.visibility = View.VISIBLE
+                trainingImageView.alpha = 1f;
+                restImageView.alpha = 1f;
+                competitionImageView.alpha = 1f;
                 return true
             }
             else -> return false
