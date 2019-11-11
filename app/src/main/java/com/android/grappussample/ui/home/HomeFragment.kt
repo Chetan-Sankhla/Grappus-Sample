@@ -8,12 +8,16 @@ import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
 import android.view.*
+import android.view.animation.CycleInterpolator
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.android.grappussample.R
 import com.android.grappussample.ui.plan.PlanActivity
 import kotlinx.android.synthetic.main.fragment_home.*
+import android.view.animation.AnimationUtils.loadAnimation
+import android.view.animation.AnimationUtils
+
 
 class HomeFragment : Fragment(), View.OnTouchListener, View.OnDragListener {
 
@@ -86,6 +90,10 @@ class HomeFragment : Fragment(), View.OnTouchListener, View.OnDragListener {
         trainingImageView.setOnTouchListener(this)
         restImageView.setOnTouchListener(this)
         addImageView.setOnDragListener(this)
+
+        val pulse = AnimationUtils.loadAnimation(context, R.anim.pulse)
+        addImageView.startAnimation(pulse)
+
     }
 
     override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
@@ -107,6 +115,8 @@ class HomeFragment : Fragment(), View.OnTouchListener, View.OnDragListener {
                 competitionImageView.visibility = View.GONE
                 trainingImageView.alpha = .5f;
                 restImageView.alpha = .5f;
+
+
             }
 
             R.id.trainingImageView -> {

@@ -65,17 +65,18 @@
         android:longClickable="true"
         android:src="@drawable/icon_competition_summary"/>
 
+
     <ImageView
         android:id="@+id/addImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:longClickable="true"
         android:src="@drawable/circle_border"/>
-
 
 </RelativeLayout>
