@@ -22,14 +22,7 @@ class MainActivity : AppCompatActivity() {
         createProfileButton.setOnClickListener { startActivity(intent) }
         skipButton.setOnClickListener { startActivity(intent) }
 
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        val bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce)
         val zoomOut = AnimationUtils.loadAnimation(this, R.anim.zoom_out)
-        val zoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in)
 
         val flipSKip = AnimatorInflater.loadAnimator(this, R.animator.flip)
             .apply {
@@ -41,10 +34,7 @@ class MainActivity : AppCompatActivity() {
                 setTarget(createProfileButton)
             }
 
-        //skipButton.startAnimation(bounceAnimation)
-        //createProfileButton.startAnimation(bounceAnimation)
         logoImageView.startAnimation(zoomOut)
-        //logoImageView.startAnimation(zoomIn)
 
         zoomOut.setAnimationListener(object : Animation.AnimationListener {
 
@@ -58,10 +48,12 @@ class MainActivity : AppCompatActivity() {
 
             override fun onAnimationEnd(p0: Animation?) {
 
-                tv_title.visibility = View.VISIBLE
-                tv_subtitle.visibility = View.VISIBLE
-                tv_title.alpha = 0.0f
-                tv_title.animate().apply {
+                titleTextView.visibility = View.VISIBLE
+                subtitleTextView.visibility = View.VISIBLE
+                titleTextView.alpha = 0.0f
+                subtitleTextView.alpha = 0.0f
+
+                titleTextView.animate().apply {
                     interpolator = LinearInterpolator()
                     duration = 600
                     alpha(1f)
@@ -69,12 +61,11 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
 
-                tv_subtitle.alpha = 0.0f
-                tv_subtitle.animate().apply {
+                subtitleTextView.animate().apply {
                     interpolator = LinearInterpolator()
                     duration = 600
                     alpha(1f)
-                    startDelay = 0
+                    startDelay = 300
                     start()
                 }
 
@@ -82,14 +73,25 @@ class MainActivity : AppCompatActivity() {
                     createProfileButton.visibility = View.VISIBLE
 
                     flip.start()
-                }, 700)
+                }, 900)
 
                 Handler().postDelayed(Runnable {
                     skipButton.visibility = View.VISIBLE
                     flipSKip.start()
-                }, 1150)
+                }, 1350)
+
+                acceptTermsTextView.visibility = View.VISIBLE
+                acceptTermsTextView.alpha = 0.0f
+                acceptTermsTextView.animate().apply {
+                    interpolator = LinearInterpolator()
+                    duration = 600
+                    alpha(1f)
+                    startDelay = 2250
+                    start()
+                }
             }
 
         })
+
     }
 }

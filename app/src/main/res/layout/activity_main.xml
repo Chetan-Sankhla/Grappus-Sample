@@ -19,54 +19,53 @@
 
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/titleTextView"
         android:layout_width="match_parent"
-
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="@string/athelete_minder"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:gravity="center"
         android:visibility="gone"
-        android:textAllCaps="true"
-        android:padding="6dp"
-        android:text="Athelete . Minder"
-        android:textColor="#ffffff"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <TextView
+        android:id="@+id/subtitleTextView"
         android:layout_width="match_parent"
-        android:id="@+id/tv_subtitle"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:visibility="gone"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="@string/mind_your_sport"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:textAllCaps="true"
-        android:padding="5dp"
-        android:text="Mind your Sport"
-        android:textColor="#ffffff"
-        android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/createProfileButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:padding="16dp"
         android:text="@string/create_profile"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitleTextView" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/skipButton"
@@ -79,9 +78,9 @@
         android:padding="16dp"
         android:text="@string/skip"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/acceptTermsTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createProfileButton" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/acceptTermsTextView"
@@ -94,15 +93,9 @@
         android:text="@string/accept_service_text"
         android:textColor="@android:color/white"
         android:textSize="16sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="610dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

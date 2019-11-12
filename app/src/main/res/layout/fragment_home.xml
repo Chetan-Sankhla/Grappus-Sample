@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:fontFamily="@font/merriweather"
         android:gravity="center"
         android:text="@string/choose_your_day"
         android:textAllCaps="true"
@@ -24,6 +25,7 @@
         android:layout_below="@+id/chooseYourDayLabelTextView"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:fontFamily="@font/merriweather"
         android:gravity="center"
         android:text="@string/use_circles"
         android:textColor="@android:color/white"
@@ -51,7 +53,7 @@
         android:focusable="true"
         android:longClickable="true"
         android:layout_centerInParent="true"
-        android:src="@drawable/icon_competition_summary" />
+        android:src="@drawable/icon_training" />
 
     <ImageView
         android:id="@+id/restImageView"
@@ -63,14 +65,13 @@
         android:layout_centerVertical="true"
         android:focusable="true"
         android:longClickable="true"
-        android:src="@drawable/icon_competition_summary"/>
+        android:src="@drawable/icon_rest"/>
 
 
     <ImageView
         android:id="@+id/addImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"

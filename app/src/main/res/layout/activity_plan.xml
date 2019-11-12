@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.plan.PlanActivity">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/how_is_your_day"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
